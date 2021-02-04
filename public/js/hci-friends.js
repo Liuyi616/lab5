@@ -10,6 +10,20 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+
+
+//Listen to clicks
+$(".img-friend a").click(function (e){
+	e.preventDefault();
+	var current_name = $(this).find("h1").text()
+	console.log(current_name);
+	var anag_name = anagrammedName(current_name);
+	console.log(anag_name);
+	$(this).find("h1").text(anag_name);
+	
+}
+);
+
 }
 
 function anagrammedName(name) {
@@ -44,3 +58,7 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+
+
+
